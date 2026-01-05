@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
     <div>
-    <h1>You have logged in</h1>
+    <h1>Buy me a COFFEE</h1>
     </div>
     </>
   );
