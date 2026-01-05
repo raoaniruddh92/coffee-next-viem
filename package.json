@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.16",
+    "@web3-onboard/core": "^2.24.1",
     "@web3-onboard/injected-wallets": "^2.11.3",
+    "@web3-onboard/metamask": "^2.2.1",
     "@web3-onboard/react": "^2.11.0",
     "next": "16.1.1",
     "react": "19.2.3",

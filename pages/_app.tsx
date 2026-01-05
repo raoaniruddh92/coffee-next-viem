@@ -1,17 +1,26 @@
 import type { AppProps } from "next/app";
 import { Web3OnboardProvider, init } from '@web3-onboard/react'
-import injectedModule from '@web3-onboard/injected-wallets'
 import { WagmiProvider } from 'wagmi'
 import { config } from '../blockchain_utils/config'
+import metamaskSDK from '@web3-onboard/metamask'
+
+const metamaskSDKWallet = metamaskSDK({options: {
+  extensionOnly: true,
+  dappMetadata: {
+    name: 'Demo Web3Onboard'
+  }
+}})
 
 const ethereumSepolia = {
   id: 11155111,
   token: 'ETH',
   label: 'Sepolia',
-  rpcUrl: 'https://rpc.sepolia.org/'
+  rpcUrl: 'https://rpc.sepolia.org/',
+  
 }
 const chains = [ethereumSepolia]
-const wallets = [injectedModule()]
+const wallets = [metamaskSDKWallet]
+
 const web3Onboard = init({
   wallets,
   chains,
