@@ -15,7 +15,7 @@ export default function Login() {
     <>
         <div>
           <h1>Connect Your wallet for the best experience</h1>
-          <button onClick={()=>connect()}></button>
+          <button onClick={()=>connect()}>Connect your wallet</button>
         </div>
     </>
   );
