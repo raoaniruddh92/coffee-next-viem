@@ -1,0 +1,24 @@
+import { useConnectWallet } from '@web3-onboard/react'
+import Login from './login';
+
+export default function Home() {
+
+  const [
+  {
+    wallet, // the wallet that has been connected or null if not yet connected
+  }
+] = useConnectWallet()
+
+  if (!wallet){
+    return (
+        <Login />
+    )
+  }
+  return (
+    <>
+    <div>
+    <h1>You have logged in</h1>
+    </div>
+    </>
+  );
+}
