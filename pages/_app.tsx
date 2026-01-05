@@ -2,9 +2,8 @@ import type { AppProps } from "next/app";
 import { Web3OnboardProvider, init } from '@web3-onboard/react'
 import injectedModule from '@web3-onboard/injected-wallets'
 import { WagmiProvider } from 'wagmi'
-import { config } from './config'
+import { config } from '../blockchain_utils/config'
 
-const INFURA_KEY = ''
 const ethereumSepolia = {
   id: 11155111,
   token: 'ETH',
