@@ -1,6 +1,6 @@
 import { useConnectWallet } from '@web3-onboard/react'
 import Login from './login';
-
+import { abi,bytecode } from '@/blockchain_utils/apit';
 export default function Home() {
 
   const [
@@ -8,6 +8,7 @@ export default function Home() {
     wallet, // the wallet that has been connected or null if not yet connected
   }
 ] = useConnectWallet()
+
 
   if (!wallet){
     return (

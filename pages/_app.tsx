@@ -1,6 +1,9 @@
 import type { AppProps } from "next/app";
 import { Web3OnboardProvider, init } from '@web3-onboard/react'
 import injectedModule from '@web3-onboard/injected-wallets'
+import { WagmiProvider } from 'wagmi'
+import { config } from './config'
+
 const INFURA_KEY = ''
 const ethereumSepolia = {
   id: 11155111,
@@ -14,7 +17,7 @@ const web3Onboard = init({
   wallets,
   chains,
   appMetadata: {
-    name: 'Web3-Onboard Demo',
+    name: 'Fund me',
     icon: '<svg>App Icon</svg>',
     description: 'A demo of Web3-Onboard.'
   },
@@ -25,7 +28,11 @@ const web3Onboard = init({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+        <WagmiProvider config={config}>
+
     <Web3OnboardProvider web3Onboard={web3Onboard}>
       <Component {...pageProps} />
     </Web3OnboardProvider>
+        </WagmiProvider>
+
   )}
