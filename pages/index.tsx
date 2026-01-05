@@ -1,6 +1,8 @@
 import { useConnectWallet } from '@web3-onboard/react'
 import Login from './login';
+import { useReadContract } from 'wagmi'
 import { abi,bytecode } from '@/blockchain_utils/apit';
+
 export default function Home() {
 
   const [
