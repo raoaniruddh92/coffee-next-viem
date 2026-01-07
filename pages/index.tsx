@@ -138,7 +138,7 @@ export default function Home() {
       })
 
       const bufferedGas = request.gas
-        ? (request.gas * 130n) / 100n
+        ? (request.gas * BigInt(130)) / BigInt(100)
         : undefined
 
       const hash = await walletClient.writeContract({
