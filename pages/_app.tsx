@@ -30,7 +30,17 @@ const web3Onboard = init({
   },
   connect: {
     autoConnectLastWallet: true
-  }
+  },
+  accountCenter: {
+    desktop: {
+      enabled: true,
+      position: 'topRight',
+      hideTransactionProtectionBtn:true
+    },
+    mobile: {
+      enabled: true,
+      position: 'topRight'
+    }}
 })
 
 export default function App({ Component, pageProps }: AppProps) {
