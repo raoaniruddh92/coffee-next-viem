@@ -151,7 +151,17 @@ export default function Home() {
         message: 'Sending transaction...'
       })
 
-      await publicClient.waitForTransactionReceipt({ hash })
+await publicClient.waitForTransactionReceipt({
+  hash,
+  onReplaced: (replacement) => {
+    if (replacement.reason === 'repriced') {
+      customNotification({
+        type: 'hint',
+        message: 'Speed Up acknowledged',
+      })
+    }
+  },
+})
 
       update({
         eventCode: 'coffeeSuccess',

@@ -16,7 +16,6 @@ const ethereumSepolia = {
   token: 'ETH',
   label: 'Sepolia',
   rpcUrl: 'https://rpc.sepolia.org/',
-  
 }
 const chains = [ethereumSepolia]
 const wallets = [metamaskSDKWallet]
