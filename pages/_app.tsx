@@ -37,9 +37,8 @@ const web3Onboard = init({
 export default function App({ Component, pageProps }: AppProps) {
   return (
         <WagmiProvider config={config}>
-    <Web3OnboardProvider web3Onboard={web3Onboard}>
-      <Component {...pageProps} />
-    </Web3OnboardProvider>
+          <Web3OnboardProvider web3Onboard={web3Onboard}>
+            <Component {...pageProps} />
+          </Web3OnboardProvider>
         </WagmiProvider>
-
   )}
