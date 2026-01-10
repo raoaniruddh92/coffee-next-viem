@@ -11,6 +11,7 @@ import {
   parseEther
 } from 'viem'
 import { sepolia } from 'viem/chains'
+import { useCopyToClipboard } from "@uidotdev/usehooks";
 
 // --------------------
 // Types
@@ -33,6 +34,7 @@ export default function Home() {
   ] = useSetChain()
 
   const [, customNotification] = useNotifications()
+  const [copiedText, copyToClipboard] = useCopyToClipboard();
 
   // --------------------
   // State
